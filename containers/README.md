@@ -7,7 +7,7 @@ You will need the following prerequisites to complete this tutorial.
 
 1. IBM Cloud Account
 
-## Provision an Instance of Cloud Object Storage and create a new bucket
+## Provision an instance of Cloud Object Storage and create a new bucket
 
 1. From the IBM Cloud catalog, select [Object Storage](https://cloud.ibm.com/objectstorage/create).
 1. Give your service instance a name.
@@ -18,7 +18,7 @@ You will need the following prerequisites to complete this tutorial.
 1. Leave this page open - it has the Service Credential information you will need in later steps.
 
 
-## Create a new IBM Cloud Code Engine Application.
+## Create a new IBM Cloud Code Engine application.
 1. From the IBM Cloud catalog, select Code Engine.
 1. Click `Start Creating` under Run your container image.
 1. `Application` should already be selected.
