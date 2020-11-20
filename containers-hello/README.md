@@ -24,7 +24,7 @@ IBM Cloud Code Engine allows you to run your application, job or container on a 
 1. Once the changes have deployed you can refresh your application URL you should see an environment variable added.
 
 ## Update Instance Number
-1. Maybe we want to control our application scaline, never allowing it to scale down to zero. Let's update our runtime settings. Click the `Runtime` tab.
+1. Maybe we want to control our application scaling, never allowing it to scale down to zero. Let's update our runtime settings. Click the `Runtime` tab.
 1. Change `Minimum number of instances` from 0 to 1.
 1. Once the changes have deployed, you should notice that your application never scales back down to 0. You can edit other runtime settings like application memory, concurrency, or timeout.
 
