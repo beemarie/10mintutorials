@@ -1,13 +1,11 @@
 # Code Engine Application with Secret
 
-IBM Cloud Code Engine enables you to run your applications, jobs, or containers on a managed serverless platform. Workloads auto-scale and you will only pay for the resources you use. In this quick tutorial, you will create a Code Engine Application that will write a URL into Cloud Object Storage.
+IBM Cloud Code Engine enables you to run your applications, jobs, or containers on a managed serverless platform. Workloads auto-scale and you will only pay for the resources you use. In this quick tutorial, you will create a Code Engine Application that will write an image into Cloud Object Storage. The application will accept a URL to an imgae, download that image, and then store it in your Cloud Object Storage bucket.
 
 ## Before You Begin
 You will need the following prerequisites to complete this tutorial.
 
 1. IBM Cloud Account
-1. IBM Cloud CLI
-1. IBM Cloud Code Engine CLI Plugin
 
 ## Provision an Instance of Cloud Object Storage and create a new bucket
 
@@ -32,7 +30,6 @@ You will need the following prerequisites to complete this tutorial.
   1. The next is named `ENDPOINT`. This is the public endpoint for your bucket found from the cloud object storage page. It should look something like: `s3.us-east.cloud-object-storage.appdomain.cloud`.
   1. `SERVICE_INSTANCE`. This value needs to be in quotes. TODO: can we put bucket instance for this? Or do we need service instance.
   1. `BUCKET_NAME`. This is the name of your bucket.
-  1. `BUCKET_LOCATION`. This is the location of your bucket, and can be found next to `Location` on the COS information page.
 1. Click Deploy.
 1. Your application should have been created successfully. Let's try it out!
 
