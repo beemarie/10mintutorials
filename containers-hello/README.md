@@ -5,7 +5,7 @@ IBM Cloud Code Engine allows you to run your application, job or container on a 
 1. From the IBM Cloud catalog, select [Code Engine](https://cloud.ibm.com/codeengine/overview).
 1. Click `Start Creating` under Run your container image.
 1. Code Engine can run both Applications and Jobs. Jobs are a run to completion workload - they are designed to run one time and exit. Applications run your code to serve HTTP requests. In this tutorial, we're deploying an `Application,` which should already be selected.
-1. You will need a new Project for your Application to live in. Projects are used to organize and group together entities like applications, jobs, and builds. Click `Create Project` under Project. Give your project a name and click `Create.`
+1. You will need a Project for your Application to live in. Projects are used to organize and group together entities like applications, jobs, and builds. Click `Create Project` under Project. Give your project a name and click `Create.`
 1. Give your application a name. Something like `helloworld-app` would be appropriate.
 1. In this case, we have already built the container image and stored it on dockerhub. The container image for this application is at `docker.io/ibmcom/helloworld`. It should already be entered in the `Image Reference` field.
 1. Click Deploy.
