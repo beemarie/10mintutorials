@@ -11,6 +11,7 @@ const apiKeyId = process.env.APIKEY;
 const endpoint = process.env.ENDPOINT;
 const serviceInstanceId = process.env.SERVICE_INSTANCE;
 const bucket = process.env.BUCKET_NAME;
+
 const config = {
   endpoint,
   apiKeyId,
@@ -42,14 +43,14 @@ function uploadFromStream(thebucket, thekey) {
 
 async function main() {
   const objects = await listObjects(bucket);
-  for (let i = 0; i < objects.Contents.length; i += 1) {
-    const key = objects.Contents[i].Key;
+  objects.Contents.forEach((obj) => {
+    const key = obj.Key;
     if (!key.includes('-thumbnail')) {
       const inStream = cos.getObject({ Bucket: bucket, Key: key }).createReadStream();
       const transform = sharp().resize({ width: 200, height: 200 });
       inStream.pipe(transform).pipe(uploadFromStream(bucket, key));
     }
-  }
+  });
 }
 
 if (require.main === module) {
