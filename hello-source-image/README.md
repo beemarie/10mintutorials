@@ -44,7 +44,7 @@ IBM Cloud Code Engine will go to the source code repository you specified, build
 1. Select your `Namespace` that you created earlier.
 1. Give a name to the image you are about to create. It could be something like `helloworld-app`.
 1. Let's also tag the image as `latest`. 
-1. We're finsihed specifying our build details. Click `Done`.
+1. We're finished specifying our build details. Click `Done`.
 1. Let's deploy our image! Click `Deploy`
 
 ## Try out your application

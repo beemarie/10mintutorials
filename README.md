@@ -20,7 +20,7 @@ In the Cloud Object Storage [containers tutorial](cos-containers/README.md) you 
 In the Cloud Object Storage [jobs tutorial](cos-jobs/README.md), you will create a job that creates thumbnails out of any images stored in your IBM Cloud Object Storage bucket.
 
 ## Service Bindings - COS
-
+In the [service binding tutorial](cos-service-bindings/README.md), you will learn to connect your application to a service using service bindings. This will enable your application to automatically have access to the required credentials to connect to this service.
 
 ## Events
-TBD
+In the Events tutorial, you will see an event created as a result of a new item created in an IBM Cloud Object Storage bucket. That event will kick off your thumbnail job to run.

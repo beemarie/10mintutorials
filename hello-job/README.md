@@ -7,7 +7,7 @@ IBM Cloud Code Engine allows you to run your application, job or container on a 
 1. Code Engine can run both Applications and Jobs. Jobs are a run to completion workload - they are designed to run one time and exit. Applications run your code to serve HTTP requests. In this tutorial, we're deploying a `Job,` so select `Job`.
 1. You will need a Project for your Application to live in. Projects are used to organize and group together entities like applications, jobs, and builds. Click `Create Project` under Project if you don't already have one. Give your project a name and click `Create.`
 1. Give your application a name. Something like `helloworld-job` would be appropriate.
-1. In this case, we have already built the container image and stored it on dockerhub. The container image for this application is at `docker.io/ibmcom/firstjob`. It should already be entered in the `Image Reference` field.
+1. In this case, we have already built the container image and stored it on Docker Hub. The container image for this application is at `docker.io/ibmcom/firstjob`. It should already be entered in the `Image Reference` field.
 1. It's not required for this job, but you could also add a command for your job or arguments for your jobs. There are additional options for runtime settings, such as how much memory the job has allocated. You could also provide environment variables to your job. 
 1. Click `Create` to create your job.
 
@@ -19,6 +19,6 @@ IBM Cloud Code Engine allows you to run your application, job or container on a 
 ## View Job Logs
 1. Let's view our job logs. First, we will need to add access to the IBM Log Analysis with LogDNA service. Click `Add Logging`.
 1. If you do not have a LogDNA service, you will need to create an instance. Click `create an instance`.
-1. Back on the Code Engine jobs page, you can now seelct your logging Instance.
+1. Back on the Code Engine jobs page, you can now select your logging Instance.
 1. Once it's selected, click `Launch Logging`.
 1. TODO: how can we view job output?
