@@ -21,6 +21,8 @@ If you have already completed the Code Engine Application with Cloud Object Stor
 1. Leave this page open - it has the Service Credential information you will need in later steps.
 
 ## Create a new IBM Cloud Code Engine job.
+The job we're creating will get all the images from your IBM Cloud Object Storage bucket, and then generate thumbnails for each of those images and upload the thumbnails to COS. The code for this job is already on dockerhub. Let's create the job on Code Engine now.
+
 1. From the IBM Cloud catalog, select [Code Engine](https://cloud.ibm.com/codeengine/overview).
 1. Click `Start Creating` under Run your container image.
 1. Code Engine can run both Applications and Jobs. Jobs are a run to completion workload - they are designed to run one time and exit. Applications run your code to serve HTTP requests. In this tutorial, we're deploying a `Job,` so select `Job`.
@@ -28,26 +30,22 @@ If you have already completed the Code Engine Application with Cloud Object Stor
 1. Give your job a name. Something like `thumbnail-job` would be appropriate.
 1. In this case, we have already built the container image for you and stored it on dockerhub. The container image for this application is at `docker.io/beemarie/cosjob`.
 1. Because this job interacts with Cloud Object Storage, there are some required environment variables. Let's also created the required environment variables now. In the `Environment Variables` section click `Add Environment Variable` to create a new variable.
-1. 
+  1. The first env variable is `APIKEY`. For name, put `APIKEY`, and for Value put your API Key from COS. This can be found on the Bucket configuration page you left open in the `Service credential` section. If you accidentally closed this page, you can navigate back to Cloud Object Storage, and then click `Service Credentials`. You can expand the service credential to see the `apikey` value.
+  1. The next is named `ENDPOINT`. This is the public endpoint for your bucket found from the cloud object storage bucket configuration page. It should look something like: `s3.us-east.cloud-object-storage.appdomain.cloud`. If you accidentally closed the page, you can navigate to Cloud Object Storage, then click `Buckets` on the left, select your bucket, and then `Configuration`.
+  1. `SERVICE_INSTANCE`. This is the value from the `Bucket instance CRN` value on the Object Storage configuration page.
+  1. `BUCKET_NAME`. This is the name of your bucket.
 1. Click `Create` to create your job.
 
-1. From the IBM Cloud catalog, select [Code Engine](https://cloud.ibm.com/codeengine/overview).
-1. Click `Start Creating` under Run your container image.
-1. Code Engine can run both Applications and Jobs. Jobs are a run to completion workload - they are designed to run one time and exit. Applications run your code to serve HTTP requests. In this tutorial, we're deploying a `Job,` so select `Job`.
-1. You will need a Project for your Application to live in. Projects are used to organize and group together entities like applications, jobs, and builds. Click `Create Project` under Project if you don't already have one. Give your project a name and click `Create.`
-1. Give your application a name. Something like `helloworld-job` would be appropriate.
-1. In this case, we have already built the container image and stored it on dockerhub. The container image for this application is at `docker.io/ibmcom/firstjob`. It should already be entered in the `Image Reference` field.
-1. It's not required for this job, but you could also add a command for your job or arguments for your jobs. There are additional options for runtime settings, such as how much memory the job has allocated. You could also provide environment variables to your job. 
-1. Click `Create` to create your job.
 
 ## Submit your job
-1. Click `Submit job`. If you would like to run your job more than once, adjust `Array indices` to a higher value, such as 10. This will start 10 jobs numbered from 1 to 10. An environment variable, JOB_INDEX, will be injected for each of the pods running the job.
+We have created the job definition, but now we would like to run the job.
+
+1. Click `Submit job`. If you would like to run your job more than once, adjust `Array indices` to a higher value, such as 10. This will start 10 jobs numbered from 1 to 10. An environment variable, JOB_INDEX, will be injected for each of the pods running the job. This would be useful in the case that you wanted to run an embarassingly parallel workload.
 1. Click `Submit Job`.
 1. You should see that your job has completed. 
 
-## View Job Logs
-1. Let's view our job logs. First, we will need to add access to the IBM Log Analysis with LogDNA service. Click `Add Logging`.
-1. If you do not have a LogDNA service, you will need to create an instance. Click `create an instance`.
-1. Back on the Code Engine jobs page, you can now seelct your logging Instance.
-1. Once it's selected, click `Launch Logging`.
-1. TODO: how can we view job output?
+## View Thumbnail Images
+The job completed, so we should have some thumbnails in our COS bucket. Let's go view those thumbnails now. 
+1. Go to the IBM Cloud Object Storage bucket you created earlier.
+1. You should see all the images you added to the bucket earlier, but now with additional `-thumbnail` images created as well.
+1. You can download one of the thumbnails by clicking the `...` menu, and then selecting `download`. You should see that it is a 200x200 version of the original image that was uploaded.

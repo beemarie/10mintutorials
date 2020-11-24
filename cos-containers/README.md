@@ -25,10 +25,10 @@ You will need the following prerequisites to complete this tutorial.
 1. You will need a new Project for your Application to live in. Projects are an organizational tool to hold entities like applications and jobs. Click `Create Project` under Project. Give your project a name and click `Create.`
 1. Give your application a name. Something like `store-images` would be appropriate.
 1. The container image for this application lives at `docker.io/beemarie/saveimages` Put that image name in the `Image Reference` field.
-1. Under Environment Variables, you will need to add a few values from the COS Instance and Bucket you created earlier.
-  1. The first env variable is APIKEY. For name, put `APIKEY`, and for Value put your APIKEY from COS.
-  1. The next is named `ENDPOINT`. This is the public endpoint for your bucket found from the cloud object storage page. It should look something like: `s3.us-east.cloud-object-storage.appdomain.cloud`.
-  1. `SERVICE_INSTANCE`. This value needs to be in quotes. TODO: can we put bucket instance for this? Or do we need service instance.
+1. Because this application saves images to Cloud Object Storage, there are some required environment variables to give the application access to the service. Let's create the required environment variables now. In the `Environment Variables` section click `Add Environment Variable` to create a new variable.
+  1. The first env variable is `APIKEY`. For name, put `APIKEY`, and for Value put your API Key from COS. This can be found on the Bucket configuration page you left open in the `Service credential` section. If you accidentally closed this page, you can navigate back to Cloud Object Storage, and then click `Service Credentials`. You can expand the service credential to see the `apikey` value.
+  1. The next is named `ENDPOINT`. This is the public endpoint for your bucket found from the cloud object storage bucket configuration page. It should look something like: `s3.us-east.cloud-object-storage.appdomain.cloud`. If you accidentally closed the page, you can navigate to Cloud Object Storage, then click `Buckets` on the left, select your bucket, and then `Configuration`.
+  1. `SERVICE_INSTANCE`. This is the value from the `Bucket instance CRN` value on the Object Storage configuration page.
   1. `BUCKET_NAME`. This is the name of your bucket.
 1. Click Deploy.
 1. Your application should have been created successfully. Let's try it out!
