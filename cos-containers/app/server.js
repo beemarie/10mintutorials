@@ -5,6 +5,10 @@ const axios = require('axios');
 const stream = require('stream');
 
 const app = express();
+if (!(process.env.APIKEY && process.env.ENDPOINT
+  && process.env.SERVICE_INSTANCE && process.env.BUCKET_NAME)) {
+  console.log('Missing required environment variables');
+}
 const apiKeyId = process.env.APIKEY;
 const endpoint = process.env.ENDPOINT;
 const serviceInstanceId = process.env.SERVICE_INSTANCE;
