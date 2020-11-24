@@ -35,7 +35,7 @@ IBM Cloud Code Engine will go to the source code repository you specified, build
 1. We won't adjust the default, but you could also modify the `Timeout` for how long before the build and run fails, as well as how much resources are designated for the build. Click `Next`.
 1. The output of the build is a container image. That container image needs to be stored in a registry once it's built. Let's add a registry now by clicking `Add` under `Registry name`.
 1. Give your registry a name. 
-1. The registry server will be based on where the IBM Container Registry was created. If it was created in Dallas, then this will be `us.icr.io`. TODO: What if the registry is created elsewhere, where is an easy place to get this server?
+1. The registry server will be based on where the IBM Container Registry was created. If it was created in Dallas, then this will be `us.icr.io`. TODO: What if the registry is created elsewhere, where is an easy place to get this server info?
 1. Enter your API key from the Setting up IBM Cloud API Key section in the `Password` field.
 1. Enter your email in the email field.
 1. Click `Add` to add the registry access to IBM Cloud Code Engine.

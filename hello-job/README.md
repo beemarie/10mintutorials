@@ -19,6 +19,6 @@ IBM Cloud Code Engine allows you to run your application, job or container on a 
 ## View Job Logs
 1. Let's view our job logs. First, we will need to add access to the IBM Log Analysis with LogDNA service. Click `Add Logging`.
 1. If you do not have a LogDNA service, you will need to create an instance. Click `create an instance`.
-1. Back on the Code Engine jobs page, you can now select your logging Instance.
+1. Back on the Code Engine jobs page, you can now select your logging Instance you just created.
 1. Once it's selected, click `Launch Logging`.
-1. TODO: how can we view job output?
+1. TODO: not displaying the output from first job. Printf may not work in this context?
