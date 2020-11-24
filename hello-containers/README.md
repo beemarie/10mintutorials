@@ -1,7 +1,7 @@
-
-## Create a new IBM Cloud Code Engine application.
+# Hello World on IBM Cloud Code Engine
 IBM Cloud Code Engine allows you to run your application, job or container on a managed serverless platform. With code engine, you can auto-scale your workloads and only pay for the resources you consume. In this tutorial, we'll deploy an application, see it running, and then watch it scale down to zero when no longer in use.
 
+## Create a new IBM Cloud Code Engine application.
 1. From the IBM Cloud catalog, select [Code Engine](https://cloud.ibm.com/codeengine/overview).
 1. Click `Start Creating` under Run your container image.
 1. Code Engine can run both Applications and Jobs. Jobs are a run to completion workload - they are designed to run one time and exit. Applications run your code to serve HTTP requests. In this tutorial, we're deploying an `Application,` which should already be selected.

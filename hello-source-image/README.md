@@ -1,5 +1,8 @@
+# Hello World on IBM Cloud Code Engine from Source
+IBM Cloud Code Engine allows you to run your application, job or container on a managed serverless platform. With code engine, you can auto-scale your workloads and only pay for the resources you consume. In this tutorial, we'll deploy an application from source code, see it running, and then watch it scale down to zero when no longer in use.
+
 ## Create an IBM Cloud Container Registry Instance
-For this tutorial, you will need to create an IBM Cloud Container Registry, so that when you build a container image there will be a place for that image to be stored.
+For this tutorial, you will need to create an IBM Cloud Container Registry so that when you build a container image there will be a place for that image to be stored.
 
 IBM Cloud Container Registry enables you to manage docker container images in a fully managed private registry. The images are checked for security issues as well.
 

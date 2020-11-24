@@ -1,4 +1,4 @@
-# Code Engine Application with Secret
+# Code Engine Application with Cloud Object Storage
 
 IBM Cloud Code Engine enables you to run your applications, jobs, or containers on a managed serverless platform. Workloads auto-scale and you will only pay for the resources you use. In this quick tutorial, you will create a Code Engine Application that will write an image into Cloud Object Storage. The application will accept a URL to an imgae, download that image, and then store it in your Cloud Object Storage bucket.
 

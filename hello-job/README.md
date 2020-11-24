@@ -1,7 +1,7 @@
-
-## Create a new IBM Cloud Code Engine job.
+# First Job on IBM Cloud Code Engine
 IBM Cloud Code Engine allows you to run your application, job or container on a managed serverless platform. With code engine, you can auto-scale your workloads and only pay for the resources you consume. In this tutorial, we'll deploy a job, see it run to completion, and then view some details about our job run.
 
+## Create a new IBM Cloud Code Engine job.
 1. From the IBM Cloud catalog, select [Code Engine](https://cloud.ibm.com/codeengine/overview).
 1. Click `Start Creating` under Run your container image.
 1. Code Engine can run both Applications and Jobs. Jobs are a run to completion workload - they are designed to run one time and exit. Applications run your code to serve HTTP requests. In this tutorial, we're deploying a `Job,` so select `Job`.
@@ -21,3 +21,4 @@ IBM Cloud Code Engine allows you to run your application, job or container on a 
 1. If you do not have a LogDNA service, you will need to create an instance. Click `create an instance`.
 1. Back on the Code Engine jobs page, you can now seelct your logging Instance.
 1. Once it's selected, click `Launch Logging`.
+1. TODO: how can we view job output?
