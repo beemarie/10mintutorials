@@ -45,4 +45,4 @@ You will need the following prerequisites to complete this tutorial.
       curl -X POST --header "Content-Type: application/json" --data '{"url":"https://cdn.pixabay.com/photo/2016/02/18/18/37/puppy-1207816_1280.jpg"}' $APPLICATION_URL/addurl
     ```
 1. If you open the cloud object storage bucket, you should be able to see that the image at the URL was stored in the bucket! You can open the bucket by going to the Cloud Object Storage instance in IBM Cloud, and then selecting `Buckets` on the left side, and then selecting your bucket.
-1. Feel free to upload images
+1. Feel free to upload additional images via URL.
