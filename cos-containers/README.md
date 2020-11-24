@@ -35,9 +35,14 @@ You will need the following prerequisites to complete this tutorial.
 
 ## Try out your application
 1. This application has an `addimages` url that accepts POST requests with an image url to save. The application will download the image at the URL and store it in your Cloud Object Storage bucket created earlier.
-1. First, let's get your application URL. You can click `Application URL` to get your application url. It should look something like `https://save-images.2jna87eu6fb.us-south.codeengine.appdomain.cloud/`
-1. Using `curl` from your CLI or a tool like Postman, make a post request to this application with the URL in the body, as follows:
+1. First, let's get your application URL. You can click `Application URL` to get your application url. It should look something like `https://save-images.2jna87eu6fb.us-south.codeengine.appdomain.cloud`
+1. In your terminal window, save the value of application URL by pasting the following command with your own application URL. Ensure there is no trailing slash for the URL.
     ```
-      curl --header "Content-Type: application\json" --request POST --data '{"url":"https://cdn.pixabay.com/photo/2016/02/18/18/37/puppy-1207816_1280.jpg"}' https://save-images.2jna87eu6fb.us-south.codeengine.appdomain.cloud/
+    APPLICATION_URL=<your_application_url_here>
     ```
-1. If you open the cloud object storage bucket, you should be able to see that the image at the URL was stored in the bucket!
+1. Using `curl` from your CLI make a post request to this application with the URL in the body, as follows:
+    ```
+      curl -X POST --header "Content-Type: application/json" --data '{"url":"https://cdn.pixabay.com/photo/2016/02/18/18/37/puppy-1207816_1280.jpg"}' $APPLICATION_URL/addurl
+    ```
+1. If you open the cloud object storage bucket, you should be able to see that the image at the URL was stored in the bucket! You can open the bucket by going to the Cloud Object Storage instance in IBM Cloud, and then selecting `Buckets` on the left side, and then selecting your bucket.
+1. Feel free to upload images
